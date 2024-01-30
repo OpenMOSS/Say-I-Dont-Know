@@ -217,9 +217,9 @@ Truthful: 78.96
 ```
 
 ## Acknowledgements
-- I especially thank Tianxiang Sun, Xiangyang Liu , Wenwei Zhang and other co-authors for their guidance and help. I enjoy the teamwork with them.
-- Thanks to my advisor, Prof. Xipeng Qiu, for his guidance, support and helping me persevere and complete this work.
-- I am also grateful to Xinyang Pu for her emotional support. I know we'll both make it through.
+- I especially thank Tianxiang Sun, Xiangyang Liu , Wenwei Zhang and other co-authors for their guidance and help. I really enjoy the teamwork with them.
+- Thanks to my advisor, Prof. Xipeng Qiu, for his guidance, support, helping me persevere and complete this work.
+- I am also grateful to Xinyang Pu for her support. I know we'll both make it through.
 
 ## Citation
 ```
