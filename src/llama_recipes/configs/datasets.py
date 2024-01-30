@@ -27,3 +27,11 @@ class Triviaqa_llama2_7b_chat_threshold_1_0_preference_data:
     train_split: str = "train"
     test_split: str = "val"
     data_path: str = os.getcwd() + "/Idk_datasets/preference_data/llama-2-7b-chat/triviaqa_train_and_valid_llama2_7b_chat_threshold_1.0_preference_pairs_for_ppo_reward.json"
+
+@dataclass
+class Triviaqa_llama2_7b_chat_hir:
+    dataset: str = "KB_triviaqa_llama2_7b_chat"
+    train_split: str = "train"
+    test_split: str = "val"
+    train_data_path: str = os.getcwd() + "/Idk_datasets/sft_data/llama-2-7b-chat/triviaqa_train_hir_data.json"
+    valid_data_path: str = os.getcwd() + "/Idk_datasets/sft_data/llama-2-7b-chat/triviaqa_valid_hir_data.json"

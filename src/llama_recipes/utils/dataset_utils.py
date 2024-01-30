@@ -52,6 +52,7 @@ DATASET_PREPROC = {
     "Triviaqa_llama2_7b_chat_threshold_1_0": partial(get_qa_dataset),
     "Triviaqa_llama2_7b_chat_threshold_1_0_half_data": partial(get_qa_dataset),
     "Triviaqa_llama2_7b_chat_threshold_1_0_preference_data": partial(get_reward_dataset_ppo),
+    "Triviaqa_llama2_7b_chat_hir": partial(get_qa_dataset),
 }
 
 

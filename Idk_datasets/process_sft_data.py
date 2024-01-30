@@ -48,8 +48,8 @@ def process(args):
     
     validation_ratio = 0.1
     train_positive_sample, train_negative_sample = construct_pos_neg(original_data)
-    pos_train_num = int(len(train_positive_sample) * (1 - 0.1))
-    neg_train_num = int(len(train_negative_sample) * (1 - 0.1))
+    pos_train_num = int(len(train_positive_sample) * (1 - validation_ratio))
+    neg_train_num = int(len(train_negative_sample) * (1 - validation_ratio))
     random.shuffle(train_positive_sample)
     random.shuffle(train_negative_sample)
     train_set = train_positive_sample[:pos_train_num] + train_negative_sample[:neg_train_num]
@@ -59,9 +59,9 @@ def process(args):
     print('Number of train samples:', len(train_set))
     print('Number of valid samples:', len(valid_set))
 
-    with open(os.path.join('sft_data', args.model_name, 'triviaqa_train_threshold_10_sft_data.json'), 'w') as f:
+    with open(os.path.join('sft_data', args.model_name, 'triviaqa_train_threshold_{}_sft_data.json'.format(args.threshold)), 'w') as f:
         json.dump(train_set, f, indent=2, ensure_ascii=False)
-    with open(os.path.join('sft_data', args.model_name, 'triviaqa_valid_threshold_10_sft_data.json'), 'w') as f:
+    with open(os.path.join('sft_data', args.model_name, 'triviaqa_valid_threshold_{}_sft_data.json'.format(args.threshold)), 'w') as f:
         json.dump(valid_set, f, indent=2, ensure_ascii=False)
 
     # process test data
@@ -73,7 +73,7 @@ def process(args):
     random.shuffle(test_set)
     print('Number of test samples:', len(test_set))
     
-    with open(os.path.join('sft_data', args.model_name, 'triviaqa_test_threshold_10_sft_data.json'), 'w') as f:
+    with open(os.path.join('sft_data', args.model_name, 'triviaqa_test_threshold_{}_sft_data.json'.format(args.threshold)), 'w') as f:
         json.dump(test_set, f, indent=2, ensure_ascii=False)
 
 if __name__ == "__main__":

@@ -182,3 +182,21 @@ You can conduct Idk-PPO training using the following command.
 bash src/deepspeed-chat-ppo/train.sh <output_dir> <actor_model_path> <reward_model_path> <data_path>
 ```
 You can generate responses using the same commands as in Idk-SFT.
+
+### Idk-HIR
+You need to first relabel Idk datasets, as shown in [Idk_datasets](Idk_datasets/README.md). Then you can use the following command to train an Idk-HIR model.
+```python
+torchrun --nproc_per_node=8 \
+    --nnodes=1 \
+    src/llama_recipes/finetuning.py \
+    --enable_fsdp \
+    --model_name meta-llama/Llama-2-7b-chat-hf \
+    --dist_checkpoint_root_folder model_checkpoints \
+    --dist_checkpoint_folder llama_2_7b_chat_Idk_hir \
+    --fsdp_config.pure_bf16 \
+    --dataset Triviaqa_llama2_7b_chat_hir \
+    --batch_size_training 32 \
+    --batching_strategy padding \
+    --num_epochs 3 \
+    --lr 2e-5
+```
