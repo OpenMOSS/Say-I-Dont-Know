@@ -200,3 +200,35 @@ torchrun --nproc_per_node=8 \
     --num_epochs 3 \
     --lr 2e-5
 ```
+
+## Evaluation
+![](figures/results.png)
+Our model ouputs can be found at [outputs](outputs). You can use the following command to evaluate the results.
+```python
+python src/evaluation/cal_knowledge_quadrants.py --file_name outputs/triviaqa_test_llama2_7b_chat_idk_sft.json
+```
+You will get the following results:
+```
+Ik-Ik: 38.37
+Ik-Idk: 40.59
+Idk-Ik: 11.53
+Idk-Idk: 9.51
+Truthful: 78.96
+```
+
+## Acknowledgements
+- I especially thank Tianxiang Sun, Xiangyang Liu , Wenwei Zhang and other co-authors for their guidance and help. I enjoy the teamwork with them.
+- Thanks to my advisor, Prof. Xipeng Qiu, for his guidance, support and helping me persevere and complete this work.
+- I am also grateful to Xinyang Pu for her emotional support. I know we'll both make it through.
+
+## Citation
+```
+@misc{cheng2024ai,
+      title={Can AI Assistants Know What They Don't Know?}, 
+      author={Qinyuan Cheng and Tianxiang Sun and Xiangyang Liu and Wenwei Zhang and Zhangyue Yin and Shimin Li and Linyang Li and Zhengfu He and Kai Chen and Xipeng Qiu},
+      year={2024},
+      eprint={2401.13275},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
