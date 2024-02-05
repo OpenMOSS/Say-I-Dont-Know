@@ -1,8 +1,7 @@
 # Construction of the Idk Dataset
 ## Download Original Questions and Responses
-You can download and unzip our data using the following commands:
+You can download our data from: [data.zip](https://drive.google.com/file/d/1xN-xtx12eHL-1-pIsS5-vERXrgzfMnw9/view?usp=drive_link) and unzip it using the following command:
 ```bash
-wget the_dataset_link
 unzip data.zip
 ```
 We will release the data download link as soon as possible.
